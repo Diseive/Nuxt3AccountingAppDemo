@@ -14,7 +14,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>a</td>
+        <td></td>
         <td></td>
       </tr>
       <tr>
