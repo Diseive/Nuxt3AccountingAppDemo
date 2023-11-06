@@ -14,16 +14,14 @@
     </thead>
     <tbody>
       <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
+        <td>科目</td>
+        <td>補助</td>
+        <td>名称</td>
+        <td>金額</td>
+        <td>消費税区分</td>
+        <td>消費税</td>
+        <td>部門</td>
+        <td>摘要</td>
       </tr>
     </tbody>
   </table>
