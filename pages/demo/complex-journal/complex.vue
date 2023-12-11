@@ -7,6 +7,16 @@
         <div class="col-6">
           <div class="input-group mb-3">
             <span class="input-group-text"><h2>仕訳帳</h2></span>
+            <div>
+    <div>
+      <label for="box1" :class="{ 'bright': box2Value !== '' }">Box 1:</label>
+      <input type="text" id="box1" :class="{ 'bright': box2Value !== '' }" :disabled="true" />
+    </div>
+    <div>
+      <label for="box2">Box 2:</label>
+      <input type="text" id="box2" v-model="box2Value" />
+    </div>
+  </div>
             <thead>
               <tr>
                 <th>年度<ReusableSelect :options="select1Options" :size="select1Size" /></th>
@@ -44,8 +54,12 @@
 </div>
 </template>
 
-<script setup>
+<script setup >
 import ReusableSelect from '~/components/ReusableSelect.vue';
+
+useHead({
+  title: 'My home page'
+})
 
 const select1Options = [
   { label: '2023', value: 'optionA' },
@@ -89,3 +103,34 @@ const select5Options = [
 const select5Size = '200px';
 
 </script>
+
+<script>
+export default {
+  data() {
+    return {
+      box1Value: '科目',
+      box2Value: '',
+    };
+  },
+  watch: {
+    box2Value(newVal) {
+      // Box 2が変更されたら、Box 1が光るようにする
+      if (newVal !== '') {
+        this.makeBox1Bright();
+      }
+    },
+  },
+  methods: {
+    makeBox1Bright() {
+      // Box 1が光るようにするための処理（クラスを追加するなど）
+      // 例: this.$refs.box1Label.classList.add('bright');
+    },
+  },
+};
+</script>
+
+<style scoped>
+.bright {
+  background-color: #e6f7ff; /* 明るい色に変更する */
+}
+</style>
